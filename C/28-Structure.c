@@ -24,9 +24,9 @@ void initializeStruct(SS* b, int pos){
 
 void printStructure(SS* b, int pos){
     printf("    ----    RECORD FOR STUDENT %d   ----    \n", pos);
-    printf("Enter Roll-Number for Student %d: %d \n", pos, b->roll_no);
-    printf("Enter The Name of Student %d: %s \n", pos, b->name);
-    printf("Enter Marks of the Student %d: %f \n", pos, b->marks);
+    printf("Roll-Number: %d \n", b->roll_no);
+    printf("Name: %s \n", b->name);
+    printf("Marks: %0.2f \n", b->marks);
 }
 
 int main(){
