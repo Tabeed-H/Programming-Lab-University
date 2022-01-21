@@ -27,7 +27,7 @@ class Employee{
             ID = id;
             hourlyWage = hwage;
             hoursWorked = hworked;
-            calculateSal();
+           
         }
 
 
@@ -35,6 +35,7 @@ class Employee{
             return ID;
         }
         double getNetSal(){
+            calculateSal();
             return netSal;
         }
 
