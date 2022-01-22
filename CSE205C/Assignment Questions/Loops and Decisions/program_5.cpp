@@ -42,15 +42,33 @@ class Employee{
 };
 
 int main(){
-    int id;
-    double hworked, hwage;
-    cout<<"Enter Employee ID , Hourly-Wage, Hours-Worked"<<endl;
-    cin>>id>>hwage>>hworked;
+   char opt;
+   int flag = 1, totalEmp = 0;
+   double  totalSal = 0;
+    while(flag){
+        int id;
+        double hworked, hwage;
+        cout<<"Enter\nEmployee ID\tHourly-Wage\tHours-Worked"<<endl;
+        cin>>id>>hwage>>hworked;
 
-    Employee emp(id, hwage, hworked);
+        Employee emp(id, hwage, hworked);
+        totalSal += emp.getNetSal();
+        totalEmp++;
+
+        cout<<"-------------------------------------------------------------"<<endl;
+        cout<<"Employee ID:\t"<<emp.getID()<<"\nNet Salary:\t"<<emp.getNetSal()<<endl;
+        cout<<"-------------------------------------------------------------"<<endl;
+        cout<<endl;
+        cout<<"Continue? (Y/N)"<<endl;
+        cin>>opt;
+        if(!(opt == 'Y' || opt == 'y'))
+            flag = 0;
+    }
 
     cout<<"-------------------------------------------------------------"<<endl;
-    cout<<"Employee ID: "<<emp.getID()<<"\nNet Salary : "<<emp.getNetSal()<<endl;
+    cout<<"TOTAL SALARY DISTRIBUTED:\t"<<totalSal<<endl;
+    cout<<"AVERAGE SALARY OF EMPLOYE:\t"<<(totalSal/totalEmp)<<endl;
     cout<<"-------------------------------------------------------------"<<endl;
-    
+
+    return 0;
 }
