@@ -39,11 +39,39 @@ class TimeIn12{
             min = time.getMin();
             if(time.getHour() > 12){
                 hour = time.getHour() - 12;
+                if(hour == 12){
+                    am = true;
+                }else{
+                    am = false;
+                }
+            }else if(time.getHour() == 12){
+                hour = time.getHour();
                 am = false;
             }else{
-                hour = time.getHour();
-                am = true;
+               if(time.getHour() == 0){
+                   hour = 12;
+               }else{
+                    hour = time.getHour();
+               }
+
+               am  = true;
             }
+        }
+
+        operator TimeIn24(){
+            int tempHour = hour;
+            int tempMin = min;
+            
+            if(!am && (tempHour != 12)){
+                tempHour += 12;
+            }
+
+            if(tempHour > 23){
+                tempHour -= 24;
+            }
+
+            return TimeIn24(tempHour, tempMin);
+
         }
 
         void displayTime(){
@@ -61,7 +89,14 @@ class TimeIn12{
 };
 
 int main(){
-    TimeIn24 t1(23,59);
+    TimeIn24 t1(0,30);
     TimeIn12 t2 = t1;
+    t1.displayTime();
     t2.displayTime();
+
+    TimeIn12 time1(false,1,30);
+    TimeIn24 time2 = time1;
+
+    time1.displayTime();
+    time2.displayTime();
 }
