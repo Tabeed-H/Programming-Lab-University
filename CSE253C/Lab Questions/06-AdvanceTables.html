@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More Concepts on Tables in HTML</title>
+  </head>
+  <body>
+    <h2>Column Span</h2>
+    <table style="width: 30%">
+      <tr>
+        <td colspan="2" style="height: 100px; background-color: red">
+          Red Cell
+        </td>
+      </tr>
+      <tr>
+        <td style="height: 100px; background-color: silver">Silver Cell</td>
+        <td style="height: 100px; background-color: gold">Golden Cell</td>
+      </tr>
+    </table>
+
+    <h2>Row Span</h2>
+    <table style="width: 30%">
+      <tr>
+        <td rowspan="2" style="background-color: red; height: 100px">
+          Red Cell
+        </td>
+        <td style="background-color: silver; height: 100px">Silver Cell</td>
+      </tr>
+      <tr>
+        <td style="background-color: gold; height: 100px">Golden Cell</td>
+      </tr>
+    </table>
+  </body>
+</html>
