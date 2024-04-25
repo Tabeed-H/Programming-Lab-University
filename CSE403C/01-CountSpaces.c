@@ -1,3 +1,4 @@
+// Program to count the number of spaces in a sentence
 #include <stdio.h>
 #include <string.h>
 #define MAX 100
